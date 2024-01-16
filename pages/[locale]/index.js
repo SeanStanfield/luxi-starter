@@ -13,14 +13,12 @@ import Header from '~/components/Header';
 import AnimateSlider from '~/components/AnimateSlider';
 import Feature from '~/components/Feature';
 import Counter from '~/components/Counter';
+import Hero from '~/components/Hero';
 import Testimonials from '~/components/Testimonials';
-import Pricing from '~/components/Pricing';
-import Blog from '~/components/Blog';
-import Subscribe from '~/components/Subscribe';
 import Footer from '~/components/Footer';
 import PageNav from '~/components/PageNav';
 import Notification from '~/components/Notification';
-import brand from '~/public/text/brand';
+import Contact from '../../components/Forms/Contact';
 
 const useStyles = makeStyles({ uniqId: 'home' })(theme => ({
   mainWrap: {
@@ -46,7 +44,7 @@ function Landing(props) {
     <React.Fragment>
       <Head>
         <title>
-          { brand.starter.name + ' - Home Page' }
+          Menu-Genie - Home Page
         </title>
       </Head>
       <CssBaseline />
@@ -57,6 +55,9 @@ function Landing(props) {
           onToggleDir={onToggleDir}
         />
         <main className={classes.containerWrap}>
+          <section className={classes.spaceBottom} id="hero">
+            <Hero />
+          </section>
           <section>
             <Container fixed>
               <AnimateSlider />
@@ -73,14 +74,11 @@ function Landing(props) {
           <section className={classes.spaceTop} id="testimonials">
             <Testimonials />
           </section>
-          <section className={classes.spaceTop} id="pricing">
-            <Pricing />
+          <section className={classes.spaceTop} id="feature">
+            <Feature />
           </section>
-          <section className={cx(classes.spaceTop, classes.spaceBottomShort)} id="blog">
-            <Blog />
-          </section>
-          <section className={classes.spaceBottom} id="subscribe">
-            <Subscribe />
+          <section className={classes.spaceTop} id="contact">
+            <Contact />
           </section>
         </main>
         <Hidden lgDown>

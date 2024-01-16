@@ -36,8 +36,15 @@ function Contact() {
     setCheck(event.target.checked);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setNotif(true);
+    console.log('submit handler triggered');
+    const res = await fetch('api/end', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+    });
+    console.log(res);
   };
 
   const handleClose = () => {
